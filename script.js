@@ -1,6 +1,6 @@
 
 var today = $("#today");
-today.html(moment().format('MMMM Do YYYY'));
+today.html(moment().format('dddd MMMM Do YYYY'));
 
 var hourBlock = $(".container");
 
@@ -18,7 +18,16 @@ for (i = 0; i < hours.length; i++) {
     $("#row" + i).append(savebuttonCol);
 }
 
-$(savebuttonCol).on('click')
+$('.saveBtn').click(function () {
+    console.log('in save btn click')
+    var textEvent = $(this).prev().html();
+    localStorage.setItem('calendar', textEvent);
+    console.log(textEvent);
+});
+
+
+
+
 
 
 
